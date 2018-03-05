@@ -1,0 +1,9 @@
+:80
+root /app/public
+log stdout
+errors stderr
+gzip
+fastcgi / php:9000 php
+rewrite {
+  to {path} {path}/ /index.php
+}

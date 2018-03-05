@@ -1,0 +1,22 @@
+#data:
+#  build: Dockerfiles/data
+
+web:
+  image: abiosoft/caddy
+  volumes:
+    - .:/app
+    - ./Caddyfile:/etc/Caddyfile:ro
+  links:
+    - php
+
+php:
+  build: .
+  volumes:
+    - .:/app
+    # Customize php.ini
+    - ./php.ini:/usr/local/etc/php/php.ini:ro
+    # Use host machine composer caching to speed up composer
+    - ~/.composer:/root/.composer
+    # Load psysh history from local
+    - ~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history
+  working_dir: /app

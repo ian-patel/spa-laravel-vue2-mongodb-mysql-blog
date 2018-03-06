@@ -14,6 +14,15 @@ RUN apk add --no-cache --virtual .run-deps \
     libmcrypt-dev \
     libxml2-dev
 
+RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \ 
+  && pecl install xdebug \
+  && docker-php-ext-enable xdebug 
+
+RUN apk add --update --no-cache autoconf
+
+RUN pecl install mongodb
+  # RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini
+
 # Get php extensions
 RUN docker-php-source extract \
   && git clone https://github.com/tideways/php-profiler-extension.git --depth=1 /usr/src/php/ext/tideways \
@@ -27,7 +36,9 @@ RUN docker-php-source extract \
     opcache \
     tideways \
   && docker-php-source delete \
+  && docker-php-ext-enable mongodb \
   && apk del .build-deps
+  && apk del pcre-dev ${PHPIZE_DEPS}
 
 # Get composer into /usr/local/bin/composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

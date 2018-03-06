@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'iconmoon';
+    src: url("../fonts/iconmoon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: 'iconmoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-stage:before {
+    content: "\e91e"
+}
+
+.icon-bin:before {
+    content: "\e91d"
+}
+
+.icon-behance:before {
+    content: "\e91c"
+}
+
+.icon-medium:before {
+    content: "\e913"
+}
+
+.icon-slack:before {
+    content: "\e914"
+}
+
+.icon-linkedin:before {
+    content: "\e915"
+}
+
+.icon-twitter:before {
+    content: "\e916"
+}
+
+.icon-facebook:before {
+    content: "\e917"
+}
+
+.icon-plus:before {
+    content: "\e918"
+}
+
+.icon-check:before {
+    content: "\e919"
+}
+
+.icon-star:before {
+    content: "\e90f"
+}
+
+.icon-bolt:before {
+    content: "\e910"
+}
+
+.icon-close:before {
+    content: "\e911"
+}
+
+.icon-link:before {
+    content: "\e912"
+}
+
+.icon-refresh:before {
+    content: "\e921"
+}
+
+.icon-user:before {
+    content: "\e90e"
+}
+
+.icon-muzli:before {
+    content: "\e90a"
+}
+
+.icon-invision:before {
+    content: "\e909"
+}
+
+.icon-google:before {
+    content: "\e908"
+}
+
+.icon-search:before {
+    content: "\e901"
+}
+
+.icon-menu:before {
+    content: "\e90b"
+}
+
+.icon-notification:before {
+    content: "\e90c"
+}
+
+.icon-like:before {
+    content: "\e90d"
+}
+
+.icon-view:before {
+    content: "\e905"
+}
+
+.icon-share:before {
+    content: "\e904"
+}
+
+.icon-hot:before {
+    content: "\1f30a"
+}
+
+.icon-time:before {
+    content: "\e907"
+}
+
+.icon-chat:before {
+    content: "\e903"
+}
+
+.icon-dribbble:before {
+    content: "\e900"
+}
+
+.icon-producthunt:before {
+    content: "\e902"
+}
+
+.icon-images:before {
+    content: "\e91f"
+}
+
+.icon-users:before {
+    content: "\e920"
+}
+
+.icon-community:before {
+    content: "\e91a"
+}
+
+.icon-upload:before {
+    content: "\e91b"
+}
+
+.icon-fav:before {
+    content: "\e906"
+}

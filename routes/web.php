@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Vue routes
+Route::get('/{vue?}', function () {
+    return view('welcome');
+})->where('vue', '[\/\w\.-]*');

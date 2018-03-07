@@ -1,15 +1,16 @@
 import Vue from 'vue';
 import store from './store';
 import router from './router';
-import App from './components/App';
 
-import './plugins';
-import './components';
+import './plugins/register';
+import './components/register';
 
 Vue.config.productionTip = false
 
-new Vue({
+// Create Vue instance and attach to the page
+const app = new Vue({
   store,
   router,
-  ...App
-})
+});
+
+app.$mount('#app');

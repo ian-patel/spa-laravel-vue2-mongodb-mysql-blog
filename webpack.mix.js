@@ -38,6 +38,7 @@ mix.extract([
   'axios',
   'lodash',
   'vue-router',
+  'v-tooltip',
   'vue-lazyload',
   'vue-infinite-loading',
 ]);

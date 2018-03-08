@@ -31,9 +31,14 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function click(Request $request)
     {
-        //
+        $post = Post::with('comments')->find($request->id);
+        $post->increment('clicks');
+        
+        return response()->json([
+            $post
+        ]);
     }
 
     /**

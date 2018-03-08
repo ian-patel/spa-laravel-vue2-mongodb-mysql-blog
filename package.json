@@ -12,10 +12,11 @@
   "dependencies": {
     "axios": "^0.17",
     "cross-env": "^5.1",
+    "element-ui": "^2.2.1",
     "eslint": "^4.7.2",
     "laravel-mix": "^2.0",
+    "bootstrap": "^4.0.0",
     "lodash": "^4.17.4",
-    "slug": "^0.9.1",
     "v-tooltip": "^2.0.0-rc.30",
     "vue": "^2.5.7",
     "vue-lazyload": "^1.2.1",
@@ -41,6 +42,7 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-vue": "^4.2.2",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.3.1",
+    "speakingurl": "^14.0.1",
     "vue-infinite-loading": "^2.2.3",
     "webpack-bundle-analyzer": "^2.9.0"
   },

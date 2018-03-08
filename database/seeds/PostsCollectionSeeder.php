@@ -11,16 +11,14 @@ class PostsCollectionSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        foreach (range(1, 100) as $index) {
-            App\Post::create([
-                'title' => $faker->sentence,
-                'details' => $faker->realText(2000, 5),
-                'likes' => $faker->randomDigitNotNull,
-                'clicks' => $faker->randomDigitNotNull,
-                'image' => $faker->imageUrl(),
-            ]);
-        }
+        factory(App\Post::class, 50)
+            ->create()
+            ->each(function ($post) {
+                $post->comments()->saveMany(
+                    factory(App\Comment::class, mt_rand(1, 10))->make()
+                );
+            });
     }
 }

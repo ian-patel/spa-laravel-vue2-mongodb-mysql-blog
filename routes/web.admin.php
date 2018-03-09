@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes for admin
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,5 +13,5 @@
 
 // Vue routes
 Route::get('/{vue?}', function () {
-    return view('blog');
+    return view('admin');
 })->where('vue', '[\/\w\.-]*');

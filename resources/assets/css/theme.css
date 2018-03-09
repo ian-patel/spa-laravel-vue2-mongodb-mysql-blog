@@ -833,8 +833,6 @@ main h2 span.sourceDescrip {
     top: -3px;
     font-size: 11px;
     text-align: center;
-    background: -webkit-linear-gradient(-45deg, #ff5b8f 0%, #ff1a1a 100%);
-    background: linear-gradient(135deg, #ff5b8f 0%, #ff1a1a 100%)
 }
 
 #app header .nav-icon.notifications .dropdown {
@@ -2262,8 +2260,6 @@ main section.featuredFeeds ul.home li .feedLink .postPhoto {
 main section.featuredFeeds ul.picks li .feedLink .postPhoto:before,
 main section.featuredFeeds ul.home li .feedLink .postPhoto:before {
     content: "";
-    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-    background: linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
     position: absolute;
     display: block;
     width: 100%;
@@ -2396,7 +2392,6 @@ main section.featuredFeeds ul.home li .feedLink .postPhoto .badge {
 main section.featuredFeeds ul.picks li .feedLink .postPhoto.imgLoaded:after,
 main section.featuredFeeds ul.home li .feedLink .postPhoto.imgLoaded:after {
     content: "";
-    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.35) 100%);
     position: absolute;
     display: block;
     width: 100%;
@@ -2529,16 +2524,6 @@ main section.featuredFeeds ul.home li .postMeta .postInfo .source {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 10px;
     padding: 0 15px
-}
-
-main section.featuredFeeds ul.picks li .postMeta .virality,
-main section.featuredFeeds ul.home li .postMeta .virality {
-    background: url(../images/icon_viral_hot.svg) no-repeat right;
-    background-size: 10px;
-    padding-right: 14px;
-    color: #ff3466;
-    float: left;
-    display: none
 }
 
 main section.featuredFeeds ul.picks li .postMeta .details,
@@ -3355,8 +3340,6 @@ main section.feeds ul li .feedLink .postInfo {
 
 main section.feeds ul li .feedLink .postInfo:before {
     content: "";
-    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
-    background: linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
     position: absolute;
     display: block;
     width: 100%;
@@ -3933,11 +3916,6 @@ main section.feeds ul li.sponsored h4 {
     background-size: 13px
 }
 
-.ui-autocomplete li.url {
-    background: url(../images/icon_link_dark.svg) no-repeat 15px center;
-    background-size: 13px
-}
-
 .ui-autocomplete li.ui-state-focus {
     background-color: rgba(77, 186, 238, 0.35)
 }
@@ -3956,7 +3934,6 @@ dialog {
     width: 370px;
     height: 370px;
     padding: 110px 50px 50px 50px;
-    background: url(../images/sources/mwl.png) no-repeat center 40px #fff;
     background-size: 46px;
     border-radius: 4px;
     position: fixed;
@@ -4106,7 +4083,6 @@ dialog.blocker button {
     line-height: 40px;
     padding: 0 75px;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, #5f90de, #4d7bd6);
     border: solid 1px #2d53af;
     font-size: 14px;
     font-weight: 700;
@@ -4121,7 +4097,6 @@ dialog.blocker button {
 }
 
 dialog.blocker button:hover {
-    background-image: linear-gradient(to bottom, #2966c7, #2855ae)
 }
 
 dialog.blocker button i {
@@ -4649,22 +4624,6 @@ body .alert a:hover {
     color: rgba(0, 0, 0, 0.8)
 }
 
-body .alert .close {
-    display: inline-block;
-    line-height: 50px;
-    height: 30px;
-    width: 29px;
-    background-image: url(../images/assets/close.png);
-    background-size: 12px auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    vertical-align: middle;
-    margin: 10px 10px;
-    float: right;
-    opacity: 0.5;
-    transition: opacity 0.35s ease-in
-}
-
 body .alert .close:hover {
     opacity: 0.8
 }
@@ -4913,31 +4872,6 @@ body.halfView .header-autocomplete {
     overflow: hidden;
     transition: all 0.25s ease-in-out
 }
-
-#scrollIndicator:hover {
-    clip-path: circle(70% at 50% 190%)
-}
-
-#scrollIndicator:hover i {
-    top: 50px;
-    animation: bounce 1s infinite
-}
-
-#scrollIndicator i {
-    width: 30px;
-    height: 30px;
-    display: block;
-    background: url(../images/assets/more.png) no-repeat center center;
-    background-size: 17px auto;
-    border-radius: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20px;
-    z-index: 100;
-    transition: top 0.25s ease-in-out
-}
-
 #scrollIndicator .progress {
     content: "";
     top: 0;

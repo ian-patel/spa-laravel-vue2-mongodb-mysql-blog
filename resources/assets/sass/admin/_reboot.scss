@@ -1,0 +1,16 @@
+
+body {
+  background-color: $body-bg;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  &:focus {
+    outline: 0;
+  }
+}

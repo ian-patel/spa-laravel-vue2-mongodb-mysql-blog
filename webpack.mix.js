@@ -14,34 +14,40 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-  .styles([
-    'resources/assets/css/theme.css',
-    'resources/assets/css/icomoon.css',
-  ], 'public/css/app.css')
+mix.js('resources/assets/js/blog/blog.js', 'js/')
+  .js('resources/assets/js/admin/admin.js', 'js/')
+  .sass('resources/assets/sass/blog/blog.scss', 'css/')
+  .sass('resources/assets/sass/admin/admin.scss', 'css/')
+  .extract([
+    'vue',
+    'axios',
+    'lodash',
+    'v-tooltip',
+    'vue-router',
+    'speakingurl',
+    'vue-lazyload',
+    'vue-infinite-loading',
+    './resources/assets/js/bootstrap',
+  ])
   .sourceMaps()
-  .setResourceRoot();
-
-mix.webpackConfig({
-  resolve: {
-    alias: {
-      app: path.resolve(__dirname, 'resources/assets/js'),
+  .setResourceRoot()
+  .webpackConfig({
+    output: {
+      path: path.resolve(Mix.isUsing('hmr') ? '/' : 'public/'),
+      filename: '[name].js',
+      chunkFilename: 'dist/js/chunks/[name].js?id=[chunkhash]',
+      publicPath: Mix.isUsing('hmr') ? ('http://localhost:8080/') : '/',
     },
-  },
-  plugins: mix.inProduction() ? [
-    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
-  ] : [],
-});
-
-mix.extract([
-  'vue',
-  'axios',
-  'lodash',
-  'vue-router',
-  'v-tooltip',
-  'vue-lazyload',
-  'vue-infinite-loading',
-]);
+    resolve: {
+      alias: {
+        styles: path.resolve(__dirname, 'resources/assets/sass'),
+        app: path.resolve(__dirname, 'resources/assets/js'),
+      },
+    },
+    plugins: mix.inProduction() ? [
+      new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+    ] : [],
+  });
 
 if (mix.inProduction()) {
   mix.version();

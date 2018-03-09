@@ -49,7 +49,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+            Post::with('comments.users')->find($id)
+        ]);
     }
 
     /**

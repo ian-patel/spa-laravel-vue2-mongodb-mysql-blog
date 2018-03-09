@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/v1/posts', 'PostController@list');
+Route::get('posts/{id}', 'PostController@show');
 Route::put('posts/click', 'PostController@click');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {

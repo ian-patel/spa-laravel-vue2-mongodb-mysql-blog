@@ -7,7 +7,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class Post extends Model
 {
     /**
-     * The collection associated with the model.
+     * The connection associated with the model.
      *
      * @var string
      */

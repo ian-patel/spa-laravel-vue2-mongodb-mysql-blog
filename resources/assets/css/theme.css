@@ -1085,7 +1085,7 @@ main h2 span.sourceDescrip {
 
 #app header .login-cta {
     display: inline-block;
-    margin: 20px 10px 20px 10px;
+    margin: 20px 65px 20px 10px;
     line-height: 24px;
     text-transform: uppercase;
     vertical-align: top;
@@ -5339,12 +5339,12 @@ body.halfView .header-autocomplete {
 
 @media only screen and (max-width: 900px) {
     header .logo {
-        display: none !important;
+        padding-left: 25px !important; 
     }
-    header .small-logo {
-        display: flex !important;
-        padding-left: 20px !important;
+    header .login-cta {
+        margin-right: 25px !important;
     }
+
     main {
         padding: 65px 20px 20px 20px;
     }

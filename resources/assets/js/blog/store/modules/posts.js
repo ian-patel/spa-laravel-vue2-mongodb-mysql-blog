@@ -1,4 +1,4 @@
-import * as api from 'app/blog/api/post';
+import * as api from 'app/commons/api/posts';
 import * as types from '../mutation-types';
 
 // state
@@ -10,7 +10,7 @@ export const state = {
 
 // mutations
 export const mutations = {
-  // Save posts
+  // save posts
   [types.SAVE_POSTS] (state, { posts }) {  
     state.posts.push(...posts);
     state.posts = _.sortedUniqBy(state.posts, '_id');
@@ -25,7 +25,12 @@ export const mutations = {
   [types.UPDATE_CURRENT_PAGE] (state, { currentPage }) {  
     state.currentPage = currentPage;
   },
-}
+
+  // update the post
+  [types.UPDATE_POST] (state, { post }) {  
+    const index = _.findIndex(state.posts, { _id: post._id });
+    state.posts[index] = post;
+  },}
 
 // actions
 export const actions = {
@@ -45,7 +50,7 @@ export const actions = {
   /**
    * Get the post
    * @param  {Function} options.commit
-   * @param  {String} options.commit
+   * @param  {String} _id
    * @return {Object}
    */
   async fetchPost ({ commit }, _id) {
@@ -57,12 +62,12 @@ export const actions = {
   /**
    * Fire click
    * @param  {Function} options.commit
-   * @param  {String} options.commit
+   * @param  {String} _id
    * @return {Object}
    */
   async fireClick ({ commit }, _id) {
     const post = await api.clicked( _id );
-    commit(types.SAVE_POSTS, { posts: post });
+    commit(types.UPDATE_POST, { post: post });
     return post;
   },
 }
@@ -77,7 +82,7 @@ export const getters = {
   },
   getPostById(state) {
     return (prop) => {
-      return state.posts.find(n => n._id === prop);
+      return _.find(state.posts, { _id: prop });
     };
   },
 }

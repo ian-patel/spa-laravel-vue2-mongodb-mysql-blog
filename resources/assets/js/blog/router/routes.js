@@ -9,7 +9,7 @@ let routes = [
     component : Home
   },
   {
-    path: '/posts/:slug--:id',
+    path: '/posts/:id',
     name: 'post',
     component: Post,
     meta: { 

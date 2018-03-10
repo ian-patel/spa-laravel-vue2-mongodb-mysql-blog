@@ -8,13 +8,7 @@
       </router-link>
     </div>
     <div class="pull-right">
-      <a class="login-cta" href="#">Sign In</a>
+      <a class="login-cta" href="/login/twitter"> <span class="icon-twitter"></span> Sign In</a>
     </div>
   </header>
 </template>
-
-<style scoped>
-  .login-cta {
-    margin-right: 65px !important;
-  }
-</style>

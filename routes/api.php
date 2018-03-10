@@ -12,6 +12,19 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// Routes for only the guest user...
+Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
+    Route::post('login', 'LoginController@login');
+
+    Route::group(['middleware' => 'auth:api'], function () {
+        // Logout
+        Route::post('/logout', 'LoginController@logout');
+        // Get User
+        Route::get('/user', function (Request $request) {
+            return ['user' => $request->user()];
+        });
+    });
+});
 
 // Posts
 Route::group(['prefix' => 'posts'], function () {

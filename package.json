@@ -11,11 +11,12 @@
   },
   "dependencies": {
     "axios": "^0.17",
+    "bootstrap": "^4.0.0",
     "cross-env": "^5.1",
     "element-ui": "^2.2.1",
     "eslint": "^4.7.2",
+    "js-cookie": "^2.2.0",
     "laravel-mix": "^2.0",
-    "bootstrap": "^4.0.0",
     "lodash": "^4.17.4",
     "v-tooltip": "^2.0.0-rc.30",
     "vue": "^2.5.7",

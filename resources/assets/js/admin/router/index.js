@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import routes from './routes';
 import Router from 'vue-router';
+import store from '../store';
 
 Vue.use(Router);
 
@@ -18,11 +19,19 @@ const router = new Router({
 
 // Change page title by using routes meta
 router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    document.title = to.meta.title + ' · ' + 'Admin';
-  } else {
-    document.title = 'Admin';
+  // check auth
+  if (to.matched.some(route => route.meta.auth)) {
+    const isLoggedIn = store.getters['isLoggedIn'];
+    if (!isLoggedIn) {
+      return next({ name: 'login' });
+    }
+    const user = store.getters['user'];
+    if (!user) {
+      store.dispatch('getUser');
+    }
   }
+  // Page title
+  if (to.meta.title) document.title = to.meta.title;  
   next();
 });
 

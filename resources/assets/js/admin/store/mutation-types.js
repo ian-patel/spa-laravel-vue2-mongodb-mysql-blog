@@ -1,0 +1,17 @@
+export const LOGOUT = 'LOGOUT';
+export const SAVE_USER = 'SAVE_USER';
+export const SAVE_TOKEN = 'SAVE_TOKEN';
+
+export const SAVE_CATEGORIES = 'SAVE_CATEGORIES';
+export const UPDATE_CATEGORY_TOTAL = 'UPDATE_CATEGORY_TOTAL';
+
+export const SAVE_USERS = 'SAVE_USERS';
+export const UPDATE_USER_TOTAL = 'UPDATE_USER_TOTAL';
+
+export const ADD_POST = 'ADD_POST';
+export const SAVE_POSTS = 'SAVE_POSTS';
+export const UPDATE_POST = 'UPDATE_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const UPDATE_CURRENT_PAGE = 'UPDATE_CURRENT_PAGE';
+export const UPDATE_HAS_MORE_POSTS = 'UPDATE_HAS_MORE_POSTS';
+

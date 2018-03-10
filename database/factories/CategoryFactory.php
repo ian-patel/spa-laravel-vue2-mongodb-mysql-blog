@@ -6,7 +6,7 @@ $factory->define(App\Category::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
         'url' => $faker->url,
-        'image' => $faker->image(),
+        'image' => $faker->imageUrl(),
         'active' => true,
         'desc' => $faker->paragraph,
     ];

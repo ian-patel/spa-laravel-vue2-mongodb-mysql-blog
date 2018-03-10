@@ -38,9 +38,7 @@
 
     <el-pagination
       :current-page="page"
-      :page-sizes="[5, 10, 25, 50, 100]"
       :page-size="limit"
-      layout="total, sizes, prev, pager, next, jumper"
       :total="totalCategories"
       @size-change="limit = $event"
       @current-change="page = $event"

@@ -25,14 +25,11 @@
       </el-form-item>
 
       <el-form-item label="Category" v-if="categories" prop="category_id">
-        <el-select v-model="form.category_id" placeholder="Category">
-          <el-option
-            v-for="category of categories"
-            :key="category._id"
-            :label="category.title"
-            :value="category._id"
-            />
-        </el-select>
+        <select v-model="form.category_id">
+          <template v-for="category of categories">
+            <option :value="category._id">{{ category.title }}</option>
+          </template>
+        </select>
       </el-form-item>
 
       <el-form-item label="Body" prop="body">

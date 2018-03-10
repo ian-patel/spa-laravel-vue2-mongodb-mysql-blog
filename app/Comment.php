@@ -26,6 +26,6 @@ class Comment extends Model
      */
     public function commenter()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User');
     }
 }

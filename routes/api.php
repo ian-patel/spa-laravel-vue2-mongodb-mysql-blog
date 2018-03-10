@@ -13,9 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('posts', 'PostController@list');
-Route::get('posts/{id}', 'PostController@show');
-Route::put('posts/click', 'PostController@click');
+// Posts
+Route::group(['prefix' => 'posts'], function () {
+    Route::get('/', 'PostController@list');
+    Route::get('/{id}', 'PostController@show');
+    Route::put('/click', 'PostController@click');
+    Route::delete('/{id}', 'PostController@destroy')->middleware('auth:api');
+    Route::put('/edit/{id}', 'PostController@update')->middleware('auth:api');
+    Route::post('/store', 'PostController@store')->middleware('auth:api');
+});
 
 // Categories
 Route::group(['prefix' => 'categories'], function () {

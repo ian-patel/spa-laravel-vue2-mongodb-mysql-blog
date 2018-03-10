@@ -15,6 +15,8 @@ class PostController extends Controller
     public function list(Request $request)
     {
         $paginator = Post::query()
+            ->with('category')
+            ->active()
             ->latest()
             ->paginate(16);
 
@@ -33,12 +35,10 @@ class PostController extends Controller
      */
     public function click(Request $request)
     {
-        $post = Post::with('comments')->find($request->id);
+        $post = Post::with(['comments.commenter', 'category'])->find($request->id);
         $post->increment('clicks');
         
-        return response()->json([
-            $post
-        ]);
+        return response()->json($post);
     }
 
     /**
@@ -49,9 +49,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return response()->json([
-            Post::with('comments.users')->find($id)
-        ]);
+        return response()->json(
+            Post::with(['comments.commenter', 'category'])->find($id)
+        );
     }
 
     /**
@@ -66,6 +66,22 @@ class PostController extends Controller
     }
 
     /**
+     * Add the new resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $post = Post::create($request->all());
+
+        return response()->json([
+            $post->load('category')
+        ]);
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -74,7 +90,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+
+        return response()->json([
+            $post
+        ]);
     }
 
     /**
@@ -85,6 +106,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return response()->json([
+            'success' => $post->softDelete()
+        ]);
     }
 }

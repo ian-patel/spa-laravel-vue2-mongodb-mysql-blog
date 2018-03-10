@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('login/{provider}', 'SocialAuthController@login');
+Route::get('callback/{provider}', 'SocialAuthController@callback');
+
 // Vue routes
 Route::get('/{vue?}', function () {
     return view('blog');

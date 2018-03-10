@@ -23,6 +23,8 @@ mix.js('resources/assets/js/blog/blog.js', 'js/')
     'axios',
     'lodash',
     'v-tooltip',
+    'js-cookie',
+    'element-ui',
     'vue-router',
     'speakingurl',
     'vue-lazyload',

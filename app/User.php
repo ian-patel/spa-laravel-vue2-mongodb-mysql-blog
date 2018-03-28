@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Eloquent\HybridRelations;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -25,7 +25,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar'
+        'name', 'email', 'password', 'avatar',
     ];
 
     /**
@@ -59,6 +59,7 @@ class User extends Authenticatable implements JWTSubject
      * Scope a query to only include search results.
      *
      * @param string $q
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, string $q): Builder
@@ -95,5 +96,4 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
-
 }

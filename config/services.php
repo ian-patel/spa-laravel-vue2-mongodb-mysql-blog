@@ -20,7 +20,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
@@ -30,15 +30,15 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+        'model'  => App\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
     'twitter' => [
-        'client_id' => env('TWITTER_CLIENT_ID'),         // Your TWITTER Client ID
+        'client_id'     => env('TWITTER_CLIENT_ID'),         // Your TWITTER Client ID
         'client_secret' => env('TWITTER_CLIENT_SECRET'), // Your TWITTER Client Secret
-        'redirect' => env('TWITTER_CLIENT_REDIRECT')
+        'redirect'      => env('TWITTER_CLIENT_REDIRECT'),
     ],
 
 ];

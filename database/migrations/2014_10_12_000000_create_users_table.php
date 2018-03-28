@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->text('avatar')->nullable();
             $table->boolean('active')->default(true);
-            $table->enum('role', ['admin', 'user', 'writer'])->default('user');;
+            $table->enum('role', ['admin', 'user', 'writer'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

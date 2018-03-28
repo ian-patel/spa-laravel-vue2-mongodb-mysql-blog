@@ -21,8 +21,8 @@ class PostController extends Controller
             ->paginate(16);
 
         return response()->json([
-            'posts' => $paginator->items(),
-            'hasMore' => $paginator->hasMorePages(),
+            'posts'       => $paginator->items(),
+            'hasMore'     => $paginator->hasMorePages(),
             'currentPage' => $paginator->currentPage(),
         ]);
     }
@@ -30,21 +30,23 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function click(Request $request)
     {
         $post = Post::with(['comments.commenter', 'category'])->find($request->id);
         $post->increment('clicks');
-        
+
         return response()->json($post);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +59,8 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +71,9 @@ class PostController extends Controller
     /**
      * Add the new resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -77,15 +81,16 @@ class PostController extends Controller
         $post = Post::create($request->all());
 
         return response()->json([
-            $post->load('category')
+            $post->load('category'),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -94,14 +99,15 @@ class PostController extends Controller
         $post->update($request->all());
 
         return response()->json([
-            $post
+            $post,
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -109,7 +115,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         return response()->json([
-            'success' => $post->softDelete()
+            'success' => $post->softDelete(),
         ]);
     }
 }

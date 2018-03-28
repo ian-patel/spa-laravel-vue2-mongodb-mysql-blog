@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Socialite;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Supports\SocialAccountService;
+use Illuminate\Http\Request;
+use Socialite;
 
 class SocialAuthController extends Controller
 {
     /**
-     * Redirect
+     * Redirect.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $provider
+     * @param \Illuminate\Http\Request $request
+     * @param string                   $provider
+     *
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request, string $provider)
@@ -24,10 +22,11 @@ class SocialAuthController extends Controller
     }
 
     /**
-     * Redirect
+     * Redirect.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $provider
+     * @param \Illuminate\Http\Request $request
+     * @param string                   $provider
+     *
      * @return \Illuminate\Http\Response
      */
     public function callback(Request $request, string $provider, SocialAccountService $service)

@@ -28,7 +28,7 @@ class Category extends Model
      * @var array
      */
     protected $appends = [
-        'posts_count'
+        'posts_count',
     ];
 
     /**
@@ -40,7 +40,7 @@ class Category extends Model
     }
 
     /**
-     * Scope a query to only include category is active
+     * Scope a query to only include category is active.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
@@ -53,6 +53,7 @@ class Category extends Model
      * Scope a query to only include search results.
      *
      * @param string $q
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, string $q): Builder

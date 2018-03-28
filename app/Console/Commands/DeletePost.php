@@ -40,16 +40,15 @@ class DeletePost extends Command
     public function handle()
     {
         $post = Post::find($this->argument('post'));
-        
+
         if ($post == null) {
             $this->error('Post not found');
+
             return;
         }
 
         if ($this->confirm("Are you sure, you want to delete post `{$post->title}` ?")) {
             return $post->softDelete();
         }
-
-        return;
     }
 }

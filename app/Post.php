@@ -43,7 +43,7 @@ class Post extends Model
     }
 
     /**
-     * Scope a query to only include post is active
+     * Scope a query to only include post is active.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
@@ -56,6 +56,7 @@ class Post extends Model
      * Scope a query to only include search results.
      *
      * @param string $q
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, string $q): Builder
@@ -81,7 +82,8 @@ class Post extends Model
     /**
      * Save the model to the database.
      *
-     * @param  array  $options
+     * @param array $options
+     *
      * @return bool
      */
     public function save(array $options = []): bool

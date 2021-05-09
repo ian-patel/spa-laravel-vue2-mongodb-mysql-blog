@@ -17,7 +17,7 @@
     "eslint": "^4.7.2",
     "js-cookie": "^2.2.0",
     "laravel-mix": "^2.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "v-tooltip": "^2.0.0-rc.30",
     "vue": "^2.5.7",
     "vue-lazyload": "^1.2.1",
